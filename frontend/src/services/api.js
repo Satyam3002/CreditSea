@@ -1,8 +1,13 @@
 import axios from 'axios';
 
+// Get API base URL from environment variables or use default
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://creditsea-pp7h.onrender.com/api';
+
+console.log('🚀 Using API Base URL:', API_BASE_URL);
+
 // Create axios instance with base configuration
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: API_BASE_URL,
   timeout: 30000, // 30 seconds timeout
   headers: {
     'Content-Type': 'application/json',
