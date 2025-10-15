@@ -232,60 +232,7 @@ router.post('/batch', upload.array('xmlFiles', 10), async (req, res) => {
   }
 });
 
-/**
- * GET /api/upload/sample
- * Get sample XML structure for testing
- */
-router.get('/sample', (req, res) => {
-  const sampleXML = `<?xml version="1.0" encoding="UTF-8"?>
-<creditReport>
-  <name>John Doe</name>
-  <mobilePhone>9876543210</mobilePhone>
-  <pan>ABCDE1234F</pan>
-  <creditScore>750</creditScore>
-  <reportSummary>
-    <totalAccounts>5</totalAccounts>
-    <activeAccounts>4</activeAccounts>
-    <closedAccounts>1</closedAccounts>
-    <currentBalanceAmount>150000</currentBalanceAmount>
-    <securedAccountsAmount>50000</securedAccountsAmount>
-    <unsecuredAccountsAmount>100000</unsecuredAccountsAmount>
-    <lastSevenDaysCreditEnquiries>2</lastSevenDaysCreditEnquiries>
-  </reportSummary>
-  <creditAccounts>
-    <account>
-      <accountNumber>1234567890123456</accountNumber>
-      <bankName>HDFC Bank</bankName>
-      <currentBalance>25000</currentBalance>
-      <amountOverdue>0</amountOverdue>
-      <accountType>Credit Card</accountType>
-      <status>Active</status>
-    </account>
-    <account>
-      <accountNumber>9876543210987654</accountNumber>
-      <bankName>ICICI Bank</bankName>
-      <currentBalance>75000</currentBalance>
-      <amountOverdue>5000</amountOverdue>
-      <accountType>Credit Card</accountType>
-      <status>Active</status>
-    </account>
-  </creditAccounts>
-  <addresses>
-    <address>
-      <type>Current</type>
-      <line1>123 Main Street</line1>
-      <city>Mumbai</city>
-      <state>Maharashtra</state>
-      <pincode>400001</pincode>
-      <country>India</country>
-    </address>
-  </addresses>
-  <reportDate>2024-01-15</reportDate>
-</creditReport>`;
 
-  res.setHeader('Content-Type', 'application/xml');
-  res.send(sampleXML);
-});
 
 module.exports = router;
 
